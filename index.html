@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html dir='ltr' lang='en-ca'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width' minimum-scale='1.0'>
+        <link rel='stylesheet' href='css/main.css'>
+        <title>A Day at the Train Station</title>
+    </head>
+
+    <body>
+        <!-- specifies the drawing area (viewport) that magically scales to browser -->
+        <svg viewBox="0 0 1600 900">
+            <!-- cloud group all shapes together -->
+            <defs> 
+                <!-- cloud group all shapes together -->
+                <g id="cloud">
+                    <ellipse class="clouds" cx="100" cy="100" rx="100" ry="50"></ellipse>
+                    <ellipse class="clouds" cx="170" cy="100" rx="90" ry="50"></ellipse>
+                    <ellipse class="clouds" cx="150" cy="50" rx="80" ry="50"></ellipse>
+                </g>
+            </defs>
+
+            <use id="c1" href="#cloud" x="0" y="250"></use>
+            <use id="c2" href="#cloud" x="-400" y="190"></use>
+            <use id="c3" href="#cloud" x="-800" y="100"></use>
+
+            <!-- buildings -->
+            <rect id="building" x="1300" y="400" width="50" height="200"></rect>
+            <rect id="building" x="1350" y="450" width="50" height="200"></rect>
+            <rect id="building" x="1400" y="350" width="50" height="250"></rect>
+            <!-- <ellipse id="building" cx="1425" cy="350" rx="50" ry="20"></ellipse> -->
+            <polyline id="building" points="1390,350 1425,250 1455,350"></polyline>
+            <rect id="building" x="1450" y="500" width="80" height="80"></rect>
+
+            <!-- hills -->
+            <circle cx="300" cy="900" r="500"></circle>
+            <circle cx="1400" cy="950" r="400"></circle>
+            <circle cx="800" cy="950" r="600"></circle>
+            
+            <!-- ground -->
+            <rect id="ground" x="0" y="647" width="1600" height="255"></rect>
+            <rect id="stand-line" x="0" y="680" width="1600" height="50"></rect>
+            <line id="stand-grid" x1="0" y1="705" x2="1600" y2="705"></line>
+            <text id="stand-back" x="-100" y="715">STAND BACK</text>
+
+            <!-- train -->
+            <g id="train">
+                <g>
+                    <rect x="200" y="100" width="600" height="100"></rect>
+                    <polyline points="200,100 80,200 200,200"></polyline>
+                    <path d="M80,200 Q100,100 200,100 Z"></path>
+                    <polyline points="800,100 920,200 800,200"></polyline>
+                    <path d="M800,100 Q900,100 920,200 Z"></path>
+                    <polyline class="window" points="190,110 95,180 190,180"></polyline>
+                    <path class="window"d="M95,180 Q130,100 190,110 Z"></path>
+                    <polyline class="window" points="810,110 905,180 810,180"></polyline>
+                    <path class="window" d="M810,110 Q870,100 905,180 Z"></path>
+                    <line id="train-line" x1="95" y1="190" x2="905" y2="190"></line>
+                    <rect class="window" x="210" y="120" width="100" height="50"></rect>
+                    <rect class="door" x="330" y="110" width="50" height="90"></rect>
+                    <line class="door" x1="355" y1="110" x2="355" y2="200"></line>
+                    <rect class="window" x="335" y="120" width="15" height="50"></rect>
+                    <rect class="window" x="360" y="120" width="15" height="50"></rect>
+                    <rect class="window" x="400" y="120" width="100" height="50"></rect>
+                    <rect class="window" x="510" y="120" width="100" height="50"></rect>
+                    <rect class="door" x="630" y="110" width="50" height="90"></rect>
+                    <line class="door" x1="655" y1="110" x2="655" y2="200"></line>
+                    <rect class="window" x="635" y="120" width="15" height="50"></rect>
+                    <rect class="window" x="660" y="120" width="15" height="50"></rect>
+                    <rect class="window" x="690" y="120" width="100" height="50"></rect>
+                </g>
+            </g>
+
+            <!-- train station -->
+            <!-- horizontal -->
+            <!-- <line x1="0" y1="10%" x2="100%" y2="10%"></line>
+            <line x1="0" y1="5%" x2="100%" y2="5%"></line> -->
+            <rect class="beam" x="0" y="45" width="1600" height="40"></rect>
+            <!-- vertical -->
+            <!-- <line x1="15%" y1="0%" x2="15%" y2="80%"></line> -->
+            <rect class="beam" x="240" y="0" width="50" height="750"></rect>
+
+            <!-- digital sign -->
+            <line x1="85%" y1="10%" x2="85%" y2="15%"></line>
+            <line x1="70%" y1="10%" x2="70%" y2="15%"></line>
+            <rect id="r3" x="965" y="135" width="550" height="80"></rect>
+            <mask id="myMask">
+                <rect x="965" y="135" width="550" height="80"></rect>
+                <text id="arrive" x="600" y="195">ARRIVING</text>
+                <text id="arrive" x="0" y="195">ONBOARDING</text>
+                <text id="arrive" x="-500" y="195">DEPARTING</text>
+            </mask>
+            <!-- ! Note we apply the fill to the rectangle not the text-->
+            <rect x="965" y="135" width="550" height="80" fill="#39ff14" mask="url(#myMask)" ></rect>
+
+            <!-- digital sign with clock -->
+            <line x1="25%" y1="10%" x2="25%" y2="15%"></line>
+            <line x1="30%" y1="10%" x2="30%" y2="15%"></line>
+            <rect id="r3" x="340" y="135" width="200" height="130"></rect>
+            <circle id="clock" cx="440" cy="200" r="60"></circle>
+            <line id="minute" x1="440" y1="200" x2="440" y2="145"></line>
+            <line id="second" x1="440" y1="200" x2="440" y2="165"></line>
+
+            <!-- bench -->
+            <rect class="bench" x="1100" y="670" width="300" height="100"></rect>
+            <polyline class="bench" points="1100,770 1400,770 1500,850 1200,850 1100,770"></polyline>
+            <line x1="1100" y1="770" x2="1100" y2="850"></line>
+            <line x1="1200" y1="850" x2="1200" y2="900"></line>
+            <line x1="1485" y1="850" x2="1485" y2="900"></line>
+        </svg> 
+    </body>
+
+</html>

@@ -87,6 +87,8 @@ svg {
   50%, 80% {
       transform: scale(0.5) translateX(1400px) rotate(-360deg);
   }
+  /* the last rotate(-180deg) was to offset the rotation that happens without it
+  however I couldn't get the plane to land rightside up after exiting the loop :(*/
   80%, 100% {
       transform: scale(0.5) translateX(3300px) rotate(-180deg);
   }

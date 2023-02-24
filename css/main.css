@@ -212,6 +212,8 @@ text {
   }
 }
 
+/* I didn't like how this animation made the hands move in a choppy motion so I opted for the fluid motion
+animation shown above, but this animation resembled how the hour hand of a clock would move more */
 /* @keyframes minuteHand {
   0% {
     transform: rotateZ(0deg);

@@ -25,6 +25,18 @@
             <use id="c2" href="#cloud" x="-400" y="190"></use>
             <use id="c3" href="#cloud" x="-800" y="100"></use>
 
+            <!-- plane -->
+            <g id="plane">
+                <ellipse id="plane-body" cx="100" cy="400" rx="100" ry="30"></ellipse>
+                <ellipse id="plane-propeller" cx="200" cy="400" rx="10" ry="40"></ellipse>
+                <line x1="50" y1="425" x2="30" y2="450"></line>
+                <line x1="150" y1="425" x2="170" y2="450"></line>
+                <circle id="plane-wheel" cx="30" cy="450" r="10"></circle>
+                <circle id="plane-wheel" cx="170" cy="450" r="10"></circle>
+                <polyline id="plane-tail" points="20,390 20,340 40,350 40,390 20,390"></polyline>
+                <path id="plane-inside" d="M50,380 Q100,300 150,380 Z"></path>
+            </g>
+            
             <!-- buildings -->
             <rect id="building" x="1300" y="400" width="50" height="200"></rect>
             <rect id="building" x="1350" y="450" width="50" height="200"></rect>
@@ -34,9 +46,9 @@
             <rect id="building" x="1450" y="500" width="80" height="80"></rect>
 
             <!-- hills -->
-            <circle cx="300" cy="900" r="500"></circle>
+            <circle cx="300" cy="1000" r="500"></circle>
             <circle cx="1400" cy="950" r="400"></circle>
-            <circle cx="800" cy="950" r="600"></circle>
+            <circle cx="800" cy="1100" r="600"></circle>
             
             <!-- ground -->
             <rect id="ground" x="0" y="647" width="1600" height="255"></rect>
